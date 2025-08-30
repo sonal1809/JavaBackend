@@ -1,0 +1,18 @@
+package LLD2.singleton.eagerloading;
+
+public class DataBaseConnection {
+
+    private static DataBaseConnection dataBaseConnection = new DataBaseConnection();
+    private DataBaseConnection(){}
+
+    public static DataBaseConnection getInstance(){
+        return dataBaseConnection;
+    }
+
+    //Will work in multithreaded environment.
+
+    //Issues :-
+
+    //1. In case we have more Singleton classes like this, then app startup will increase.
+    //2. We can't pass any attribute inside the constructor.
+}
