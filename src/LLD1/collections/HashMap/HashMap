@@ -1,0 +1,9 @@
+If we want to use a custom class (like Employee) as a key in a HashMap, you must override hashCode() and equals() properly.
+* Key Points to Remember
+    1. Always override both equals() and hashCode() together.
+    2.Contract rules:
+        a.If equals() says two objects are equal, their hashCode() must be the same.
+        b.If hashCode() is same, objects may or may not be equal.
+
+    3.Use Objects.hash() and Objects.equals() to avoid boilerplate code.
+    4.Use only immutable fields (like id) for equality — otherwise keys can break if fields change after insertion.

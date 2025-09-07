@@ -1,6 +1,5 @@
 package LLD1.java8.StreamAPI;
 
-import LLD1.java8.Employee;
 
 import java.util.ArrayList;
 import java.util.Arrays;
