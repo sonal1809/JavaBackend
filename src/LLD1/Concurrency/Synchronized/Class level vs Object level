@@ -1,0 +1,9 @@
+-   synchronized instance methods lock on the object instance (this).
+    Two threads calling synchronized methods on the same instance block each other.
+    If they call on different instances, they do not block.
+
+-   static synchronized methods lock on the Class object (ClassName.class) — this is class-level locking;
+    all static synchronized methods of that class share that lock.
+
+-   Use instance locks when you need per-object mutual exclusion;
+    use class-level locks when you need a single lock across all instances.

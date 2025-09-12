@@ -10,8 +10,13 @@ final class Person {
     private final Address address;
     private final List<Department> departments;
     private final Date dob;
+    private final List<String> degrees;
 
-    public Person(String name, Address address, List<Department> departments, Date dob) {
+    public Person(String name,
+                  Address address,
+                  List<Department> departments,
+                  Date dob,
+                  List<String> degrees) {
         this.name = name;
 
         // Deep copy for mutable fields
@@ -23,6 +28,8 @@ final class Person {
         }
 
         this.dob = new Date(dob.getTime()); // Defensive copy
+
+        this.degrees = Collections.unmodifiableList(new ArrayList<>(degrees));
     }
 
     public String getName() {
@@ -43,5 +50,9 @@ final class Person {
 
     public Date getDob() {
         return new Date(dob.getTime()); // defensive copy
+    }
+
+    public List<String> getDegrees() {
+        return degrees; // already unmodifiable
     }
 }

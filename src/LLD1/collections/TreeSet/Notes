@@ -1,0 +1,3 @@
+If you store custom objects, you must implement either:
+    -  Comparable interface in the class, OR
+    -  Provide a Comparator when creating TreeSet.

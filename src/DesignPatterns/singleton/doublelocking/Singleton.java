@@ -23,8 +23,11 @@ public class Singleton {
         return instance;
     }
 
+//    Without this second check, if two threads pass the first check at the same time,
+//    both could enter the synchronized block sequentially and create two different Singleton objects.
+
     // 🛡 Prevents creating new object during deserialization
-    protected Object readResolve() {
+    protected Singleton readResolve() {
         return instance;
     }
 }
